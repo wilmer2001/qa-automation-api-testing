@@ -1,0 +1,22 @@
+{
+  "name": "qa-automation-api-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilmer2001/qa-automation-api-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilmer2001/qa-automation-api-testing/issues"
+  },
+  "homepage": "https://github.com/wilmer2001/qa-automation-api-testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.0"
+  }
+}
