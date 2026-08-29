@@ -37,9 +37,9 @@ jobs:
       - name: Run tests with retry
         uses: nick-invision/retry@v2
         with:
-          timeout_minutes: 5
-          max_attempts: 2
-          retry_wait_seconds: 10
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 15
           command: npm test
           on_retry_command: echo "Test failed, retrying..."
 

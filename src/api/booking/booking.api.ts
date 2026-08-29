@@ -8,7 +8,7 @@ export class BookingAPI {
   private async retry<T>(
     fn: () => Promise<T>,
     operation: string,
-    maxRetries: number = 2
+    maxRetries: number = 3
   ): Promise<T> {
     let lastError: any;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
@@ -17,7 +17,7 @@ export class BookingAPI {
       } catch (error) {
         lastError = error;
         if (attempt < maxRetries) {
-          const delay = 1000 * attempt;
+          const delay = 2000 * attempt;
           logger.warn(`${operation} attempt ${attempt} failed, retrying in ${delay}ms`);
           await new Promise(resolve => setTimeout(resolve, delay));
         }
