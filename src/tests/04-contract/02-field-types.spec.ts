@@ -4,6 +4,7 @@ import { bookingAPI } from '../../api/booking/booking.api';
 import logger from '../../utils/logger';
 
 test.describe('Contract - Field Types', () => {
+  
   test('token debe ser string', async () => {
     logger.info('Test: validar tipo de token');
 
@@ -17,6 +18,7 @@ test.describe('Contract - Field Types', () => {
       throw error;
     }
   });
+
 
   test('bookingid debe ser número', async () => {
     logger.info('Test: validar tipo de bookingid');
