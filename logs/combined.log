@@ -1,0 +1,5 @@
+{"level":"info","message":"Test: autenticación válida","timestamp":"2026-08-29T01:27:11.454Z"}
+{"level":"info","message":"[POST] /auth","timestamp":"2026-08-29T01:27:11.457Z"}
+{"level":"info","message":"[200] /auth","timestamp":"2026-08-29T01:27:11.785Z"}
+{"level":"info","message":"Authentication successful","timestamp":"2026-08-29T01:27:11.786Z"}
+{"level":"info","message":"✅ Autenticación exitosa","timestamp":"2026-08-29T01:27:11.791Z","token":"c9b9a6de3b6b432..."}
