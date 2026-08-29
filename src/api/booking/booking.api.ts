@@ -5,30 +5,45 @@ import logger from '../../utils/logger';
 export class BookingAPI {
   private baseUrl = '/booking';
 
+  private async retry<T>(
+    fn: () => Promise<T>,
+    operation: string,
+    maxRetries: number = 2
+  ): Promise<T> {
+    let lastError: any;
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        return await fn();
+      } catch (error) {
+        lastError = error;
+        if (attempt < maxRetries) {
+          const delay = 1000 * attempt;
+          logger.warn(`${operation} attempt ${attempt} failed, retrying in ${delay}ms`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+        }
+      }
+    }
+    throw lastError;
+  }
+
   async createBooking(booking: BookingRequest): Promise<BookingResponse> {
-    try {
+    return this.retry(async () => {
       const response = await baseRequest.post<BookingResponse>(
         this.baseUrl,
         booking
       );
       logger.info('Booking created successfully', { bookingId: response.data.bookingid });
       return response.data;
-    } catch (error) {
-      logger.error('Failed to create booking', error);
-      throw error;
-    }
+    }, 'Create booking');
   }
 
   async getBooking(bookingId: number): Promise<BookingDetails> {
-    try {
+    return this.retry(async () => {
       const response = await baseRequest.get<BookingDetails>(
         `${this.baseUrl}/${bookingId}`
       );
       return response.data;
-    } catch (error) {
-      logger.error(`Failed to get booking ${bookingId}`, error);
-      throw error;
-    }
+    }, `Get booking ${bookingId}`);
   }
 
   async updateBooking(

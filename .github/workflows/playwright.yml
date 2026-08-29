@@ -9,10 +9,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
         node-version: [18.x, 20.x]
+      max-parallel: 1
 
     steps:
       - name: Checkout code
@@ -33,9 +35,14 @@ jobs:
       - name: Run TypeScript check
         run: npx tsc --noEmit
 
-      - name: Run tests
-        run: npm test
-        continue-on-error: true
+      - name: Run tests with retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 5
+          max_attempts: 2
+          retry_wait_seconds: 10
+          command: npm test
+          on_retry_command: echo "Test failed, retrying..."
 
       - name: Upload test results
         if: always()
