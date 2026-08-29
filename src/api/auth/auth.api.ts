@@ -7,7 +7,7 @@ export class AuthAPI {
   private baseUrl = '/auth';
 
   async login(username?: string, password?: string): Promise<string> {
-    const maxRetries = 4;
+    const maxRetries = 2;
     let lastError: any;
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
@@ -27,14 +27,14 @@ export class AuthAPI {
       } catch (error) {
         lastError = error;
         if (attempt < maxRetries) {
-          const delay = 1500;
+          const delay = 500;
           logger.warn(`Auth attempt ${attempt} failed, retrying in ${delay}ms`);
           await new Promise(resolve => setTimeout(resolve, delay));
         }
       }
     }
 
-    logger.error('Authentication failed after 4 attempts', lastError);
+    logger.error('Authentication failed after 2 attempts', lastError);
     throw lastError;
   }
 }
