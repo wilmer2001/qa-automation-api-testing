@@ -1,9 +1,16 @@
 {
   "name": "qa-automation-api-testing",
   "version": "1.0.0",
-  "description": "",
+  "description": "Suite automatizada de pruebas API REST para reagendamiento de citas DonDoctor",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "clean": "rm -rf reports/* test-results/*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wilmer2001/qa-automation-api-testing.git"
@@ -16,7 +23,15 @@
   },
   "homepage": "https://github.com/wilmer2001/qa-automation-api-testing#readme",
   "devDependencies": {
+    "@faker-js/faker": "^10.6.0",
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.4.0"
+    "@types/node": "^26.4.0",
+    "allure-commandline": "^2.43.0",
+    "axios": "^1.20.0",
+    "dotenv": "^17.4.2",
+    "joi": "^18.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2",
+    "winston": "^3.19.0"
   }
 }
