@@ -17,7 +17,7 @@ export class BookingAPI {
       } catch (error) {
         lastError = error;
         if (attempt < maxRetries) {
-          const delay = 2000 * attempt;
+          const delay = 1500;
           logger.warn(`${operation} attempt ${attempt} failed, retrying in ${delay}ms`);
           await new Promise(resolve => setTimeout(resolve, delay));
         }

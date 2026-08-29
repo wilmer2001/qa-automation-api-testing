@@ -27,8 +27,8 @@ export class AuthAPI {
       } catch (error) {
         lastError = error;
         if (attempt < maxRetries) {
-          const delay = 2000 * attempt;
-          logger.warn(`Auth attempt ${attempt} failed, retrying in ${delay}ms`, error);
+          const delay = 1500;
+          logger.warn(`Auth attempt ${attempt} failed, retrying in ${delay}ms`);
           await new Promise(resolve => setTimeout(resolve, delay));
         }
       }
