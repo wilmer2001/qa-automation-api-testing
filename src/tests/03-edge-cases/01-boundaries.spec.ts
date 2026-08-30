@@ -20,7 +20,7 @@ test.describe('Reserva - Casos Límite', () => {
 
       const response = await bookingAPI.createBooking(bookingData);
       expect(response.booking.totalprice).toBe(0);
-      logger.info('✅ Precio 0 aceptado');
+      logger.info('Precio 0 aceptado');
 
       await bookingAPI.cancelBooking(response.bookingid, await require('../../api/auth/auth.api').authAPI.login());
     } catch (error: any) {
@@ -46,7 +46,7 @@ test.describe('Reserva - Casos Límite', () => {
 
       const response = await bookingAPI.createBooking(bookingData);
       expect(response.booking.totalprice).toBe(999999);
-      logger.info('✅ Precio alto aceptado');
+      logger.info('Precio alto aceptado');
     } catch (error: any) {
       logger.warn('Precio muy alto rechazado', error);
       expect(true).toBe(true);
@@ -75,7 +75,7 @@ test.describe('Reserva - Casos Límite', () => {
 
       const response = await bookingAPI.createBooking(bookingData);
       expect(response.booking.bookingdates.checkin).toBe(bookingData.bookingdates.checkin);
-      logger.info('✅ Reserva a 30 días aceptada');
+      logger.info('Reserva a 30 días aceptada');
     } catch (error: any) {
       logger.warn('Límite de 30 días problemático', error);
       expect(true).toBe(true);

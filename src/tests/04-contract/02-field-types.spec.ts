@@ -12,7 +12,7 @@ test.describe('Contract - Field Types', () => {
       const token = await authAPI.login();
 
       expect(typeof token).toBe('string');
-      logger.info('✅ Token es string válido');
+      logger.info('Token es string válido');
     } catch (error: any) {
       logger.error('Tipo de token inválido', error);
       throw error;
@@ -40,7 +40,7 @@ test.describe('Contract - Field Types', () => {
       expect(typeof response.bookingid).toBe('number');
       expect(response.bookingid).toBeGreaterThan(0);
 
-      logger.info('✅ BookingID es número válido');
+      logger.info('BookingID es número válido');
     } catch (error: any) {
       logger.warn('Tipo de bookingid inválido', error);
       expect(true).toBe(true);
@@ -67,7 +67,7 @@ test.describe('Contract - Field Types', () => {
       expect(typeof response.booking.totalprice).toBe('number');
       expect(response.booking.totalprice).toBe(250);
 
-      logger.info('✅ TotalPrice es número válido');
+      logger.info('TotalPrice es número válido');
     } catch (error: any) {
       logger.warn('Tipo de totalprice inválido', error);
       expect(true).toBe(true);
@@ -93,7 +93,7 @@ test.describe('Contract - Field Types', () => {
 
       expect(typeof response.booking.depositpaid).toBe('boolean');
 
-      logger.info('✅ DepositPaid es booleano válido');
+      logger.info('DepositPaid es booleano válido');
     } catch (error: any) {
       logger.warn('Tipo de depositpaid inválido', error);
       expect(true).toBe(true);
@@ -120,7 +120,7 @@ test.describe('Contract - Field Types', () => {
       expect(typeof response.booking.bookingdates.checkin).toBe('string');
       expect(typeof response.booking.bookingdates.checkout).toBe('string');
 
-      logger.info('✅ BookingDates tienen tipos válidos');
+      logger.info('BookingDates tienen tipos válidos');
     } catch (error: any) {
       logger.warn('Tipos de bookingdates inválidos', error);
       expect(true).toBe(true);

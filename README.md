@@ -1,11 +1,12 @@
 # Prueba Técnica QA - DonDoctor
+
 ## Suite Automatizada de Pruebas API REST
 
 ![Tests](https://github.com/wilmer2001/qa-automation-api-testing/actions/workflows/ci.yml/badge.svg)
 
 Suite completa de pruebas automatizadas para validar la funcionalidad de **reagendamiento de citas médicas** en la plataforma DonDoctor.
 
-### 📊 Estadísticas
+### Estadísticas
 
 - **Tests**: 25 (5 happy path + 7 negative + 5 edge cases + 8 contract)
 - **Framework**: Playwright + TypeScript
@@ -13,9 +14,10 @@ Suite completa de pruebas automatizadas para validar la funcionalidad de **reage
 - **CI/CD**: GitHub Actions
 - **Reportes**: HTML + JSON
 
-### 🚀 Quick Start
+### Quick Start
 
 #### Requisitos
+
 - Node.js 18+
 - npm 9+
 - Git
@@ -53,42 +55,50 @@ npm run test:debug
 npm run test:report
 ```
 
-### 📈 Categorías de Pruebas
+### Categorías de Pruebas
 
 #### Happy Path (5 tests)
+
 Validación de flujos positivos:
-- ✅ Autenticación válida
-- ✅ Crear reserva
-- ✅ Consultar reserva
-- ✅ Actualizar reserva
-- ✅ Cancelar reserva
+
+- Autenticación válida
+- Crear reserva
+- Consultar reserva
+- Actualizar reserva
+- Cancelar reserva
 
 #### Negative Tests (7 tests)
+
 Validación de errores:
-- ❌ Autenticación con credenciales inválidas
-- ❌ Datos incompletos
-- ❌ Precio negativo
-- ❌ Fechas inversas
-- ❌ Sin nombre
-- ❌ Operaciones sin token
+
+- Autenticación con credenciales inválidas
+- Datos incompletos
+- Precio negativo
+- Fechas inversas
+- Sin nombre
+- Operaciones sin token
 
 #### Edge Cases (5 tests)
+
 Validación de límites:
-- 🔄 Precio mínimo (0)
-- 🔄 Precio muy alto
-- 🔄 Límite de 30 días
-- 🔄 Múltiples créaciones simultáneas
-- 🔄 Múltiples cancelaciones simultáneas
+
+- Precio mínimo (0)
+- Precio muy alto
+- Límite de 30 días
+- Múltiples créaciones simultáneas
+- Múltiples cancelaciones simultáneas
 
 #### Contract Tests (8 tests)
-Validación de esquema:
-- 📋 Schema de autenticación
-- 📋 Schema de create booking
-- 📋 Schema de get booking
-- 📋 Tipos de campos (string, number, boolean)
-- 📋 Estructura de bookingdates
 
-### 📁 Estructura del Proyecto
+Validación de esquema:
+
+- Schema de autenticación
+- Schema de create booking
+- Schema de get booking
+- Tipos de campos (string, number, boolean)
+- Estructura de bookingdates
+
+### Estructura del Proyecto
 
 ```
 src/
@@ -115,14 +125,14 @@ src/
     └── 04-contract/
 ```
 
-### 🔧 Configuración
+### Configuración
 
 - **Playwright**: `playwright.config.ts`
 - **TypeScript**: `tsconfig.json`
 - **Ambiente**: `.env.local`
 - **CI/CD**: `.github/workflows/ci.yml`
 
-### 📊 Reportes
+### Reportes
 
 Después de ejecutar `npm test`:
 
@@ -136,28 +146,29 @@ npm run test:report
 # - playwright-report/ (HTML interactivo)
 ```
 
-### 🔗 GitHub Actions
+### GitHub Actions
 
 El pipeline se ejecuta automáticamente en:
+
 - Push a `feature/Automatizacion`
 - Pull requests
 
 Ver historial: [Actions](https://github.com/wilmer2001/qa-automation-api-testing/actions)
 
-### 💾 Git Commits
+### Git Commits
 
 ```
-✅ init: setup inicial
-✅ config: actualizar playwright y tsconfig
-✅ feat: implementar base de APIs y primer test
-✅ feat: agregar utilidades y segundo test
-✅ test: agregar 3 tests happy path
-✅ test: agregar 5 tests negativos
-✅ test: agregar edge cases y contract tests (10 nuevos)
-✅ ci: configurar GitHub Actions pipeline
+ init: setup inicial
+ config: actualizar playwright y tsconfig
+ feat: implementar base de APIs y primer test
+ feat: agregar utilidades y segundo test
+ test: agregar 3 tests happy path
+ test: agregar 5 tests negativos
+ test: agregar edge cases y contract tests (10 nuevos)
+ ci: configurar GitHub Actions pipeline
 ```
 
-### 📝 Decisiones de Arquitectura
+### Decisiones de Arquitectura
 
 - **Playwright**: Fixtures automáticas, reportes profesionales
 - **TypeScript strict**: Validación de tipos en tiempo de compilación
@@ -167,7 +178,7 @@ Ver historial: [Actions](https://github.com/wilmer2001/qa-automation-api-testing
 
 Ver más: `docs/DECISIONES-ARQUITECTURA.md`
 
-### 🛠️ Tecnologías
+### Tecnologías
 
 - Playwright 1.62.1
 - TypeScript 7.0.2

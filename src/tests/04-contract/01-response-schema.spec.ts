@@ -14,7 +14,7 @@ test.describe('Contract - Response Schema', () => {
       expect(typeof token).toBe('string');
       expect(token.length).toBeGreaterThan(0);
 
-      logger.info('✅ Schema de auth válido');
+      logger.info('Schema de auth válido');
     } catch (error: any) {
       logger.error('Schema de auth inválido', error);
       throw error;
@@ -46,7 +46,7 @@ test.describe('Contract - Response Schema', () => {
       expect(response.booking).toHaveProperty('depositpaid');
       expect(response.booking).toHaveProperty('bookingdates');
 
-      logger.info('✅ Schema de create booking válido');
+      logger.info('Schema de create booking válido');
     } catch (error: any) {
       logger.warn('Schema de booking inválido', error);
       expect(true).toBe(true);
@@ -77,7 +77,7 @@ test.describe('Contract - Response Schema', () => {
       expect(retrieved).toHaveProperty('depositpaid');
       expect(retrieved).toHaveProperty('bookingdates');
 
-      logger.info('✅ Schema de get booking válido');
+      logger.info('Schema de get booking válido');
     } catch (error: any) {
       logger.warn('Schema de get booking inválido', error);
       expect(true).toBe(true);

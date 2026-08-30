@@ -25,7 +25,7 @@ test.describe('Cancelar reserva - Happy Path', () => {
 
       await bookingAPI.cancelBooking(bookingId, authToken);
 
-      logger.info('✅ Reserva cancelada exitosamente', { bookingId });
+      logger.info('Reserva cancelada exitosamente', { bookingId });
       expect(true).toBe(true);
     } catch (error) {
       logger.warn('Cancelación puede fallar en API pública', error);

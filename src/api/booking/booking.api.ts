@@ -5,6 +5,7 @@ import logger from '../../utils/logger';
 export class BookingAPI {
   private baseUrl = '/booking';
 
+  // Metodo privado para manejar reintentos (Reutilizable)
   private async retry<T>(
     fn: () => Promise<T>,
     operation: string,
@@ -13,7 +14,7 @@ export class BookingAPI {
     let lastError: any;
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
-        return await fn();
+        return await fn(); // intenta la Operacion
       } catch (error) {
         lastError = error;
         if (attempt < maxRetries) {
@@ -23,7 +24,7 @@ export class BookingAPI {
         }
       }
     }
-    throw lastError;
+    throw lastError; // lanza un error despues de todos los Intentos
   }
 
   async createBooking(booking: BookingRequest): Promise<BookingResponse> {
@@ -36,6 +37,7 @@ export class BookingAPI {
       return response.data;
     }, 'Create booking');
   }
+  // obtener reserva por ID con reintentos
 
   async getBooking(bookingId: number): Promise<BookingDetails> {
     return this.retry(async () => {
@@ -45,7 +47,7 @@ export class BookingAPI {
       return response.data;
     }, `Get booking ${bookingId}`);
   }
-
+  // actualizar reserva
   async updateBooking(
     bookingId: number,
     booking: BookingRequest,
@@ -56,7 +58,7 @@ export class BookingAPI {
         `${this.baseUrl}/${bookingId}`,
         booking,
         {
-          headers: { Cookie: `token=${token}` }
+          headers: { Cookie: `token=${token}` } // Autenticacion via cookies
         }
       );
       logger.info('Booking updated successfully', { bookingId });
@@ -67,6 +69,7 @@ export class BookingAPI {
     }
   }
 
+  //cancelar reserva
   async cancelBooking(bookingId: number, token: string): Promise<void> {
     try {
       await baseRequest.delete(
@@ -81,7 +84,7 @@ export class BookingAPI {
       throw error;
     }
   }
-
+  // obtencion de lista de reservas con filtros
   async getBookingIds(params?: { firstname?: string; lastname?: string }): Promise<number[]> {
     try {
       const response = await baseRequest.get<{ bookingids: number[] }>(

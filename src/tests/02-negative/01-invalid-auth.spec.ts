@@ -11,7 +11,7 @@ test.describe('Autenticación - Casos Negativos', () => {
       
       expect(token).toBeFalsy();
     } catch (error: any) {
-      logger.info('✅ Autenticación rechazada correctamente', { error: error.message });
+      logger.info('Autenticación rechazada correctamente', { error: error.message });
       expect(true).toBe(true);
     }
   });
@@ -24,7 +24,7 @@ test.describe('Autenticación - Casos Negativos', () => {
       
       expect(token).toBeFalsy();
     } catch (error: any) {
-      logger.info('✅ Autenticación sin credenciales rechazada', { error: error.message });
+      logger.info('Autenticación sin credenciales rechazada', { error: error.message });
       expect(true).toBe(true);
     }
   });
