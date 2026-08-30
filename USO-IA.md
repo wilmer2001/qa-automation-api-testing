@@ -7,20 +7,21 @@
 
 ---
 
-## 📋 RESUMEN EJECUTIVO
+## RESUMEN EJECUTIVO
 
 Este documento declara de forma transparente y honesta:
-- ✅ Qué herramientas de IA se utilizaron
-- ✅ Para qué se utilizaron (solo debugging de CI/CD)
-- ✅ Ejemplos específicos de uso
-- ✅ Qué se hizo SIN IA (mayoría del trabajo)
+
+- Qué herramientas de IA se utilizaron
+- Para qué se utilizaron (solo debugging de CI/CD)
+- Ejemplos específicos de uso
+- Qué se hizo SIN IA (mayoría del trabajo)
 
 **Porcentaje de uso:** 10-15% (solo en debugging de CI/CD)  
 **Porcentaje de trabajo propio:** 85-90% (arquitectura, código, tests, documentación)
 
 ---
 
-## 🤖 HERRAMIENTAS IA UTILIZADAS
+## HERRAMIENTAS IA UTILIZADAS
 
 ### **Claude (Anthropic)**
 
@@ -31,7 +32,7 @@ Este documento declara de forma transparente y honesta:
 
 ---
 
-## 🎯 USO ESPECÍFICO DE IA
+## USO ESPECÍFICO DE IA
 
 ### **ÚNICO USO: Debugging de GitHub Actions (CI/CD)**
 
@@ -47,9 +48,9 @@ PROBLEMA ENCONTRADO:
 - Node 18.x no era compatible con Playwright (error)
 
 MI SOLUCIÓN:
-✅ Investigué documentación de GitHub Actions
-✅ Identifiqué que v3 era deprecated
-✅ Cambié a v4 (solución personal)
+ Investigué documentación de GitHub Actions
+ Identifiqué que v3 era deprecated
+ Cambié a v4 (solución personal)
 
 AYUDA DE IA:
 Claude ayudó a agilizar algunos cambios de versiones en el YML
@@ -63,54 +64,58 @@ del refinamiento final del YML
 
 ---
 
-## ❌ QUÉ NO USÉ IA
+## QUÉ NO USÉ IA
 
 ### **Arquitectura**
-- ✅ Diseño de Page Object Model: 100% personal
-- ✅ Estructura de carpetas: 100% personal
-- ✅ Patrón de fixtures: 100% personal
+
+- Diseño de Page Object Model: 100% personal
+- Estructura de carpetas: 100% personal
+- Patrón de fixtures: 100% personal
 
 ### **Código de Tests**
-- ✅ Todos los 25 tests: 100% personal
-- ✅ Estrategia de reintentos: 100% personal (decisión basada en observación de fallos)
-- ✅ Manejo de API inestable: 100% personal (por debugging de logs)
-- ✅ Custom assertions: 100% personal
-- ✅ Data generators con Faker: 100% personal
+
+- Todos los 25 tests: 100% personal
+- Estrategia de reintentos: 100% personal (decisión basada en observación de fallos)
+- Manejo de API inestable: 100% personal (por debugging de logs)
+- Custom assertions: 100% personal
+- Data generators con Faker: 100% personal
 
 ### **Debugging y Análisis**
-- ✅ Identificación de error 418 en Restful Booker: 100% personal
-- ✅ Análisis de 4 tests fallidos: 100% personal
-- ✅ Decisión de 5 reintentos en Playwright: 100% personal
-- ✅ Documentación de 3 defectos encontrados: 100% personal
+
+- Identificación de error 418 en Restful Booker: 100% personal
+- Análisis de 4 tests fallidos: 100% personal
+- Decisión de 5 reintentos en Playwright: 100% personal
+- Documentación de 3 defectos encontrados: 100% personal
 
 ### **Documentación**
-- ✅ E1: Análisis de Requerimientos: 95% personal, 5% asistencia IA en redacción
-- ✅ E2: Estrategia de Pruebas: 95% personal, 5% asistencia IA en redacción
-- ✅ E3: Casos de Prueba: 95% personal (definición de 25 casos), 5% asistencia IA en formato
-- ✅ E5: Reporte de Ejecución: 95% personal (análisis real), 5% asistencia IA en estructura
-- ✅ Documentación técnica: 90% personal, 10% asistencia en redacción
+
+- E1: Análisis de Requerimientos: 95% personal, 5% asistencia IA en redacción
+- E2: Estrategia de Pruebas: 95% personal, 5% asistencia IA en redacción
+- E3: Casos de Prueba: 95% personal (definición de 25 casos), 5% asistencia IA en formato
+- E5: Reporte de Ejecución: 95% personal (análisis real), 5% asistencia IA en estructura
+- Documentación técnica: 90% personal, 10% asistencia en redacción
 
 ---
 
-## 📊 DESGLOSE FINAL
+## DESGLOSE FINAL
 
-| Componente | Uso IA | Trabajo Personal |
-|-----------|--------|------------------|
-| Arquitectura | 0% | 100% |
-| Código de tests (25) | 0% | 100% |
-| Reintentos y resilencia | 0% | 100% |
-| Debugging y análisis | 5% | 95% |
-| CI/CD | 10% | 90% |
-| Documentación | 5% | 95% |
-| **TOTAL** | **10-15%** | **85-90%** |
+| Componente              | Uso IA     | Trabajo Personal |
+| ----------------------- | ---------- | ---------------- |
+| Arquitectura            | 0%         | 100%             |
+| Código de tests (25)    | 0%         | 100%             |
+| Reintentos y resilencia | 0%         | 100%             |
+| Debugging y análisis    | 5%         | 95%              |
+| CI/CD                   | 10%        | 90%              |
+| Documentación           | 5%         | 95%              |
+| **TOTAL**               | **10-15%** | **85-90%**       |
 
 ---
 
-## ✅ CONCLUSIÓN
+## CONCLUSIÓN
 
 ### **¿Fue ética la uso de IA?**
 
-✅ **SÍ**, porque:
+**SÍ**, porque:
 
 1. **TRANSPARENCIA:** Este documento declara todo claramente
 2. **MÍNIMO USO:** Solo para debugging de CI/CD, no para lógica de tests
@@ -119,23 +124,25 @@ del refinamiento final del YML
 5. **SIN SUSTITUCIÓN:** IA ayudó a agilizar, no reemplazó razonamiento técnico
 
 ### **Lo que IA NO hizo:**
-- ❌ No escribió los tests (yo identifiqué qué probar)
-- ❌ No diseñó la arquitectura (yo decidí Page Object Model)
-- ❌ No diagnosticó el error 418 (yo lo observé en logs)
-- ❌ No definió los 25 casos de prueba (yo diseñé la cobertura)
+
+- No escribió los tests (yo identifiqué qué probar)
+- No diseñó la arquitectura (yo decidí Page Object Model)
+- No diagnosticó el error 418 (yo lo observé en logs)
+- No definió los 25 casos de prueba (yo diseñé la cobertura)
 
 ### **Lo que SÍ hizo IA:**
-- ✅ Ayudó a sintaxis de YML en GitHub Actions (debugging)
-- ✅ Sugirió permisos GITHUB_TOKEN (debugging)
-- ✅ Aceleró algunas redacciones de documentación
+
+- Ayudó a sintaxis de YML en GitHub Actions (debugging)
+- Sugirió permisos GITHUB_TOKEN (debugging)
+- Aceleró algunas redacciones de documentación
 
 ---
 
-## 🎯 VERIFICACIÓN FINAL
+## VERIFICACIÓN FINAL
 
 **Pregunta clave:** ¿Hubiera podido hacer esto SIN IA?
 
-**Respuesta:** ✅ **SÍ, 100% del proyecto**
+**Respuesta:** **SÍ, 100% del proyecto**
 
 - Los tests: Yo identifiqué qué probar
 - La arquitectura: Yo diseñé la estructura
@@ -147,5 +154,4 @@ IA solo aceleró partes de redacción y refinamiento, pero TODO el trabajo técn
 ---
 
 **Documento:** USO-IA - Declaración Transparente  
-**Fecha:** Agosto 29, 2026  
-**Verificado:** ✅ Sí  
+**Fecha:** Agosto 29, 2026
