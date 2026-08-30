@@ -24,7 +24,7 @@ test.describe('Actualizar reserva - Happy Path', () => {
       expect(result.firstname).toBe(updatedData.firstname);
       expect(result.totalprice).toBe(updatedData.totalprice);
 
-      logger.info('✅ Reserva actualizada exitosamente', { bookingId: testBookingId });
+      logger.info('Reserva actualizada exitosamente', { bookingId: testBookingId });
     } catch (error) {
       logger.warn('Actualización no disponible en API pública', error);
       expect(true).toBe(true);

@@ -28,7 +28,7 @@ test.describe('Reserva - Concurrencia', () => {
       const results = await Promise.allSettled(promises);
       
       const successful = results.filter(r => r.status === 'fulfilled');
-      logger.info(`✅ ${successful.length} bookings creados simultáneamente`);
+      logger.info(`${successful.length} bookings creados simultáneamente`);
       
       expect(successful.length).toBeGreaterThanOrEqual(1);
     } catch (error: any) {
@@ -61,7 +61,7 @@ test.describe('Reserva - Concurrencia', () => {
       }
 
       const results = await Promise.allSettled(promises);
-      logger.info(`✅ ${results.length} cancelaciones ejecutadas`);
+      logger.info(`${results.length} cancelaciones ejecutadas`);
       
       expect(results.length).toBeGreaterThanOrEqual(1);
     } catch (error: any) {

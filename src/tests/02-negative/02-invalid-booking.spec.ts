@@ -22,7 +22,7 @@ test.describe('Crear Reserva - Casos Negativos', () => {
       
       expect(response.booking.totalprice).toBeGreaterThanOrEqual(0);
     } catch (error: any) {
-      logger.info('✅ Precio negativo rechazado correctamente', { error: error.message });
+      logger.info('Precio negativo rechazado correctamente', { error: error.message });
       expect(true).toBe(true);
     }
   });
@@ -48,7 +48,7 @@ test.describe('Crear Reserva - Casos Negativos', () => {
       const checkoutDate = new Date(response.booking.bookingdates.checkout);
       expect(checkoutDate.getTime()).toBeGreaterThan(checkinDate.getTime());
     } catch (error: any) {
-      logger.info('✅ Fechas inversas rechazadas correctamente', { error: error.message });
+      logger.info('Fechas inversas rechazadas correctamente', { error: error.message });
       expect(true).toBe(true);
     }
   });
@@ -72,7 +72,7 @@ test.describe('Crear Reserva - Casos Negativos', () => {
       
       expect(response.booking.firstname).toBeTruthy();
     } catch (error: any) {
-      logger.info('✅ Booking sin nombre rechazado correctamente', { error: error.message });
+      logger.info('Booking sin nombre rechazado correctamente', { error: error.message });
       expect(true).toBe(true);
     }
   });

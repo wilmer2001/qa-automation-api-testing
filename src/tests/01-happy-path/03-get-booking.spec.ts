@@ -12,6 +12,6 @@ test.describe('Consultar reserva - Happy Path', () => {
     expect(booking.firstname).toBeTruthy();
     expect(booking.lastname).toBeTruthy();
 
-    logger.info('✅ Reserva consultada exitosamente', { firstname: booking.firstname });
+    logger.info('Reserva consultada exitosamente', { firstname: booking.firstname });
   });
 });

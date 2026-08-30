@@ -9,12 +9,14 @@ export type APIFixtures = {
 };
 
 export const test = base.extend<APIFixtures>({
+  // fixtures 1: obtiene el token de autenticacion antes de cada test
   authToken: async ({}, use) => {
     logger.info('Setting up authentication');
     const token = await authAPI.login();
-    await use(token);
+    await use(token); // entrega el token a los test
   },
 
+  // fixtures 2: Crea una reserva para usarla en los test
   testBookingId: async ({ authToken }, use) => {
     logger.info('Setting up test booking');
     const booking = await bookingAPI.createBooking({
@@ -28,8 +30,9 @@ export const test = base.extend<APIFixtures>({
       }
     });
 
-    await use(booking.bookingid);
+    await use(booking.bookingid); // pasa el bookingId al test
 
+    // Cleanup: cancela despues del test
     logger.info('Cleaning up test booking');
     try {
       await bookingAPI.cancelBooking(booking.bookingid, authToken);

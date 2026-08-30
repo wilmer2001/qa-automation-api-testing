@@ -23,7 +23,7 @@ test.describe('Crear reserva - Happy Path', () => {
       expect(response.bookingid).toBeTruthy();
       expect(response.booking).toBeDefined();
 
-      logger.info('✅ Reserva creada', { bookingId: response.bookingid });
+      logger.info('Reserva creada', { bookingId: response.bookingid });
 
       await bookingAPI.cancelBooking(response.bookingid, authToken);
     } catch (error) {

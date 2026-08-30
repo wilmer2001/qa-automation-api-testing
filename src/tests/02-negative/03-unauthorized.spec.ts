@@ -24,7 +24,7 @@ test.describe('Operaciones - Sin Autorización', () => {
       
       expect(result.firstname).not.toBe('Hacker');
     } catch (error: any) {
-      logger.info('✅ Update sin autorización rechazado', { error: error.message });
+      logger.info('Update sin autorización rechazado', { error: error.message });
       expect(true).toBe(true);
     }
   });
@@ -39,7 +39,7 @@ test.describe('Operaciones - Sin Autorización', () => {
       
       expect(false).toBe(true);
     } catch (error: any) {
-      logger.info('✅ Cancel sin token rechazado', { error: error.message });
+      logger.info('Cancel sin token rechazado', { error: error.message });
       expect(true).toBe(true);
     }
   });
